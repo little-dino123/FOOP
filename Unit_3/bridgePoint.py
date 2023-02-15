@@ -1,4 +1,7 @@
 from re import A
+dict={
+	"s"
+}
 # evals the cards and adds the amount of points its worth to the total
 def cardEval(card):
 	global cardPoints
