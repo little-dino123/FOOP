@@ -8,7 +8,7 @@ class StockPortfolio:
         self.accountName = accountName
         self.bankNum = bankNum
         self.portfolio = type(dict)
-        pass
+        return "success"
 
     def buyStock(self, ticker, quantity):
         cost = StockMarket.ticker.price * quantity
@@ -32,4 +32,3 @@ class StockPortfolio:
         for stock in self.portfolio:
             total += self.portfolio[stock]*StockMarket.stock.price
         return total
-    
