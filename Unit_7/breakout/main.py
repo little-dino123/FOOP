@@ -17,7 +17,8 @@ pygame.display.set_caption("Breakout Game")
 
 all_sprites_list = pygame.sprite.Group()
 all_bricks = pygame.sprite.Group()
-for j in range(4):
+rows = 4
+for j in range(rows):
     y = j*50+60
     for i in range(7):
         bricks1 = brick.Brick(PURPLE, 80, 30)
