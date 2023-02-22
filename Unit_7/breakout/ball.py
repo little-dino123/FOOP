@@ -12,7 +12,12 @@ class Ball(pygame.sprite.Sprite):
         self.image.set_colorkey([0, 0, 0])
         pygame.draw.rect(self.image, color, [0, 0, radius, radius])
         xspeed = random.randint(3, 5)
+        xspeed = 8
         yspeed = random.randint(3, 5)
+        yspeed = 5
+        multiplier = 0.5
+        xspeed *= multiplier
+        yspeed *= multiplier
         self.velocity = [xspeed, yspeed]
 
         # Fetch the rectangle object that has the dimensions of the image.
