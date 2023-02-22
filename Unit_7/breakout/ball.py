@@ -12,8 +12,8 @@ class Ball(pygame.sprite.Sprite):
         self.image = pygame.Surface([radius, radius])
         self.image.set_colorkey([0, 0, 0])
         pygame.draw.rect(self.image, color, [0, 0, radius, radius])
-
-        self.velocity = [random.randint(4, 8), random.randint(4, 8)]
+        speed = 4
+        self.velocity = [speed, speed]
 
         # Fetch the rectangle object that has the dimensions of the image.
         self.rect = self.image.get_rect()
@@ -23,9 +23,9 @@ class Ball(pygame.sprite.Sprite):
         self.rect.y = y
 
     def update(self):
-        pass
-        # self.rect.x +=
+        self.rect.x += self.velocity[0]
+        self.rect.y += self.velocity[1]
 
     def bounce(self):
-        pass
-        # self.velocity[0] =
+        self.velocity[0] *= -1 if random.randint(0, 1) == 1 else 1
+        self.velocity[1] *= -1

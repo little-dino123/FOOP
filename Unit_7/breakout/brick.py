@@ -17,4 +17,3 @@ class Brick(pygame.sprite.Sprite):
     def setxy(self, x, y):
         self.rect.x = x
         self.rect.y = y
-

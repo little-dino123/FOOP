@@ -5,6 +5,7 @@ class Paddle(pygame.sprite.Sprite):
     # derives from the "Sprite" class in Pygame.
 
     def __init__(self, color, width, height):
+        self.width = width
         # Call the parent class (Sprite) constructor
         super().__init__()
 
@@ -19,7 +20,8 @@ class Paddle(pygame.sprite.Sprite):
         self.rect.y = y
 
     def move(self, amount, direction):
-        if direction == "left":
+        if direction == "left" and self.rect.x >= 0:
             self.rect.x -= amount
-        else:
+        elif direction == "right" and self.rect.x <= 800-self.width:
             self.rect.x += amount
+
