@@ -62,8 +62,7 @@ while playing:
         lives -= 1
         pygame.time.wait(3000)
         ball1.setxy(400, 540)
-
-    if ball1.rect.y < 10:
+    if ball1.rect.y < 38:
         ball1.velocity[1] = -ball1.velocity[1]
 
     if pygame.sprite.collide_mask(ball1, paddle1):
