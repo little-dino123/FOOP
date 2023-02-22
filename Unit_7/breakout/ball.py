@@ -8,7 +8,6 @@ class Ball(pygame.sprite.Sprite):
     def __init__(self, color, radius):
         # Call the parent class (Sprite) constructor
         super().__init__()
-
         self.image = pygame.Surface([radius, radius])
         self.image.set_colorkey([0, 0, 0])
         pygame.draw.rect(self.image, color, [0, 0, radius, radius])

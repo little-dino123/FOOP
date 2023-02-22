@@ -2,6 +2,7 @@ import pygame
 import paddle
 import ball
 import brick
+import random
 
 # RGB colors for pygame elements; google color picker
 WHITE = (255, 255, 255)
@@ -18,10 +19,11 @@ pygame.display.set_caption("Breakout Game")
 all_sprites_list = pygame.sprite.Group()
 all_bricks = pygame.sprite.Group()
 rows = 4
+rainbow = [(148, 0, 211), (75, 0, 130), (0, 0, 255), (0, 255, 0), (255, 255, 0), (255, 127, 0), (255, 0, 0)]
 for j in range(rows):
     y = j*50+60
     for i in range(7):
-        bricks1 = brick.Brick(PURPLE, 80, 30)
+        bricks1 = brick.Brick(random.choice(rainbow), 80, 30)
         bricks1.setxy((60 + i * 100), y)
         all_sprites_list.add(bricks1)
         all_bricks.add(bricks1)
