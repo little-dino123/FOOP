@@ -7,18 +7,23 @@ class BankAccount:
 
     def changeInterestRate(self, newRate):
         self.interest = newRate
-        return "success"
+        return False
 
     def deposit(self, cash):
         self.balance += cash
-        return "success"
+        return True
 
     def withdraw(self, cash):
         if cash <= self.balance:
             self.balance -= cash
-            return "success"
-        return "error"
+            return True
+        return False
 
     def currentBalance(self):
         return self.balance
 
+    def pay(self, charge):
+        if charge < self.balance:
+            self.balance -= charge
+            return True
+        return False
