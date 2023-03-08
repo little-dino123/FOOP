@@ -30,5 +30,5 @@ class StockPortfolio:
     def checkTotalValue(self):
         total = 0
         for stock in self.portfolio:
-            total += self.portfolio[stock]*StockMarket.stock.price
+            total += self.portfolio[stock] * StockMarket.stock.price
         return total
