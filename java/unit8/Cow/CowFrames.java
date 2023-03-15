@@ -17,19 +17,36 @@ public class CowFrames extends JFrame {
 		setBackground(GRASS);
 		repaint();
 	}
+	public void drawGrid(Graphics g){
+		g.setColor(Color.RED);
+		// vertical lines
+		for(int i=0; i<350; i=i+10) {
+			g.drawLine(i, 0, i, 200);
+		}
+		//horizontal lines
+		for(int j=0; j<200; j=j+10){
+			g.drawLine(0,j,350,j);
+		}
+	}
 	public void drawLegs(Graphics g){
 		g.setColor(Color.BLACK);
 		g.fillRect(400+OFFSET,140,10,50);
 		g.fillRect(490+OFFSET,140,10,50);
 
 	}
+	public void drawTail(Graphics g){
+		g.setColor(Color.BLACK);
+		g.fillRect(550+OFFSET,100, 25,5);
+	}
 	public void paint(Graphics g) {
+		drawGrid(g);
 		g.setColor(BISQUE);
 		g.setColor(Color.LIGHT_GRAY);
 		g.fillOval(350+OFFSET, 50, 200, 100);
 		g.setColor(Color.WHITE);
 		g.fillOval(340+OFFSET, 50, 60, 40);
 		drawLegs(g);
+		drawTail(g);
 
 
 
