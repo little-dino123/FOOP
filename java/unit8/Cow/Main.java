@@ -7,5 +7,4 @@ public class Main {
 		CowFrames c = new CowFrames();
 		c.setVisible(true);
 	}
-
 }
