@@ -9,5 +9,6 @@ class Cart:
         return self.items[item]
 
     def addItem(self, item, quantity, add=True):
-        self.items[item] = quantity if item not in self.items else (self.items[item] + quantity if add else self.items[item] - quantity)
+        self.items[item] = quantity if item not in self.items else (
+            self.items[item] + quantity if add else self.items[item] - quantity)
         return True

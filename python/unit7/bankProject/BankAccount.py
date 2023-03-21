@@ -21,4 +21,3 @@ class BankAccount():
 
     def currentBalance(self):
         return self.balance
-

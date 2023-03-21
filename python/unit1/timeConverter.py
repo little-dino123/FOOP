@@ -79,11 +79,12 @@ remainder_yr = input % 31536000
 months = remainder_yr // 2592000
 remainder_mo = remainder_yr % 2592000
 weeks = remainder_mo // 604800
-remainder_wk = remainder_mo%604800
-days = remainder_wk//86400
-remainder_day = remainder_wk%86400
-hours = remainder_day//3600
-remainder_hr = input%3600
-minutes = remainder_hr//60
-seconds = remainder_hr%60  
-print(input, "seconds is", years, "year(s)", months, "month(s)", weeks,"week(s),", days,"day(s),", hours, "hour(s)", minutes,"minute(s) and", seconds,"seconds.")
+remainder_wk = remainder_mo % 604800
+days = remainder_wk // 86400
+remainder_day = remainder_wk % 86400
+hours = remainder_day // 3600
+remainder_hr = input % 3600
+minutes = remainder_hr // 60
+seconds = remainder_hr % 60
+print(input, "seconds is", years, "year(s)", months, "month(s)", weeks, "week(s),", days, "day(s),", hours, "hour(s)",
+      minutes, "minute(s) and", seconds, "seconds.")

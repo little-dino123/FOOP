@@ -1,6 +1,7 @@
 import random
+
 # Create a list of words to choose from
-words = open("Unit_4/hangman/thing.txt","r").read().split()
+words = open("Unit_4/hangman/thing.txt", "r").read().split()
 # Choose a random word from the list
 word = random.choice(words)
 print(word)
@@ -23,13 +24,12 @@ while True:
     # If letter is not in the word, subtract a guess
     if guess not in word:
         guesses_left -= 1
-        if guesses_left==0:
-            print("The word was",word)
+        if guesses_left == 0:
+            print("The word was", word)
             print("You lose!")
             break
     if set(word) <= set(guesses):
-        print("The word was",word)
+        print("The word was", word)
         print("You win!")
         break
-    print("You have",guesses_left,"guesses left")
-
+    print("You have", guesses_left, "guesses left")

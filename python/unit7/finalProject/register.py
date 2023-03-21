@@ -15,7 +15,7 @@ class Register:
         tax = self.TAX
         subtotal = 0
         for i in items:
-            subtotal += i.getPrice()*items[i]*i.getTax()
+            subtotal += i.getPrice() * items[i] * i.getTax()
         return subtotal
 
     def checkoutCash(self, items):

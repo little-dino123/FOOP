@@ -15,4 +15,3 @@ class StockMarket:
 
     def tick(self):
         self.price *= 1 + (random.random() - 0.5)
-

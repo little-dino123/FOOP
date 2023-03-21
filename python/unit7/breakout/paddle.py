@@ -22,6 +22,5 @@ class Paddle(pygame.sprite.Sprite):
     def move(self, amount, direction):
         if direction == "left" and self.rect.x >= 0:
             self.rect.x -= amount
-        elif direction == "right" and self.rect.x <= 800-self.width:
+        elif direction == "right" and self.rect.x <= 800 - self.width:
             self.rect.x += amount
-
