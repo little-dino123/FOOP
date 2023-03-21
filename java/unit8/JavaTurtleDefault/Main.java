@@ -30,7 +30,6 @@ public class Main {
     public static void drawBody(int x, int y, int w, int h, Turtle t) {
         rect(x, y, w, h, t);
     }
-
     public static void drawRoof(int x, int y, int w, int h, Turtle t) {
         t.penUp();
         t.moveTo(x - w / 2, y);
