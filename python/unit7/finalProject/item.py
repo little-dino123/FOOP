@@ -13,5 +13,5 @@ class Item:
     def getPrice(self):
         return self.price
 
-    def getTax(self):
-        return self.tax
+    def getPriceWithTax(self):
+        return self.price * self.tax

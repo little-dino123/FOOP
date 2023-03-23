@@ -11,24 +11,28 @@ class Register:
         self.earning = 0
         pass
 
-    def getSubtotal(self, items):
-        tax = self.TAX
-        subtotal = 0
-        for i in items:
-            subtotal += i.getPrice() * items[i] * i.getTax()
-        return subtotal
 
-    def checkoutCash(self, items):
-        total = self.getSubtotal(items, True)
-        self.cash += total
+@staticmethod
+def getSubtotal(itemsQuantity, itemsToObjects):
+    subtotal = 0
+    for i in itemsQuantity:
+        obj = itemsToObjects[i]
+        subtotal += obj.getPriceWithTax() * itemsQuantity[i]
+    return subtotal
+
+
+def checkoutCash(self, items):
+    total = self.getSubtotal(items, True)
+    self.cash += total
+    self.earning += total
+    return True
+
+
+def checkoutCard(self, card, items):
+    total = self.getSubtotal(items, True)
+    cardbalance = card.currentBalance()
+    if total <= cardbalance:
         self.earning += total
         return True
-
-    def checkoutCard(self, card, items):
-        total = self.getSubtotal(items, True)
-        cardbalance = card.currentBalance()
-        if total <= cardbalance:
-            self.earning += total
-            return True
-        else:
-            return False
+    else:
+        return False
