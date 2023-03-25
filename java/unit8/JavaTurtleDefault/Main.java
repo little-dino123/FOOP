@@ -8,7 +8,7 @@ public class Main {
     public static final int houseW = (int) (canvasW * 0.6);
     public static final int houseH = (int) (canvasW * 0.45);
     public static final int houseX = canvasW / 2;
-    public static final int houseY = (int)(canvasH * 1.2 / 2);
+    public static final int houseY = (int) (canvasH * 1.2 / 2);
     public static final int ground = houseY + houseH / 2;
 
     public static void main(String[] args) {
