@@ -1,8 +1,3 @@
-from bankAccount import BankAccount
-from item import Item
-import main
-
-
 class Register:
     TAX = 1.095
 
