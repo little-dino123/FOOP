@@ -1,8 +1,8 @@
 class Register:
     TAX = 1.095
 
-    def __init__(self):
-        self.cash = 1000
+    def __init__(self, cash):
+        self.cash = cash
         self.earning = 0
         pass
 

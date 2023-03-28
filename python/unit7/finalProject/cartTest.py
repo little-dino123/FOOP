@@ -1,9 +1,7 @@
 class CartTest:
-    def __init__(self, name, quantityOfItems={}, itemNamesToObjects={}):
+    def __init__(self, name, items={}):
         self.name = name
-        self.quantityOfItems = quantityOfItems
-        self.itemNamesToObjects = itemNamesToObjects
-
+        self.quantityOfItems = items
     def getItemQuantityDict(self):
         return self.quantityOfItems
 
@@ -16,10 +14,6 @@ class CartTest:
     def getItemObjectDict(self, item):
         return self.itemNamesToObjects[item]
 
-    def addItemQuantity(self, item, quantity):
+    def addItem(self, item, quantity):
         self.quantityOfItems[item] = quantity if item not in self.items else self.items[item] + quantity
-        return True
-
-    def addItemToObject(self, object):
-        self.itemNamesToObjects[object.getName()] = object
         return True

@@ -1,5 +1,8 @@
+from item import Item
+
+
 class Inventory:
-    def __init__(self, name, quantityOfItems, itemNamesToObjects):
+    def __init__(self, name, quantityOfItems={}, itemNamesToObjects={}):
         self.name = name
         self.quantityOfItems = quantityOfItems
         self.itemNamesToObjects = itemNamesToObjects
@@ -16,6 +19,10 @@ class Inventory:
     def getItemObjectDict(self, item):
         return self.itemNamesToObjects[item]
 
-    def addItem(self, item, quantity):
-        self.items[item] = quantity if item not in self.items else self.items[item] + quantity
+    def addItemQuantity(self, item, quantity):
+        self.quantityOfItems[item] = quantity if item not in self.items else self.items[item] + quantity
+        return True
+
+    def addItemToObject(self, object):
+        self.itemNamesToObjects[object.getName()] = object
         return True
