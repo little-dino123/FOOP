@@ -1,4 +1,4 @@
-package unit8.Cow;
+package unit8.Classwork.Cow;
 
 public class Main {
 

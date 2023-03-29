@@ -1,4 +1,4 @@
-package unit8.WeDoATinyBitOfTomfoolery.ConditionalPrac;
+package unit8.Classwork.ConditionalPrac;
 
 import java.util.Scanner;
 

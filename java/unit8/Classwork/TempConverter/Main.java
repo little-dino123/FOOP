@@ -1,4 +1,4 @@
-package unit8.WeDoATinyBitOfTomfoolery.TempConverter;
+package unit8.Classwork.TempConverter;
 
 import java.util.*;
 

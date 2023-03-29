@@ -1,4 +1,4 @@
-package unit8.WeDoATinyBitOfTomfoolery.PowerGenerator;
+package unit8.Classwork.PowerGenerator;
 
 public class PowerGenerator{
     private double b;

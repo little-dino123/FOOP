@@ -1,10 +1,9 @@
-package unit8.JavaTurtleDefault;
+package unit8.Classwork.JavaTurtleDefault;
 
 import javax.swing.*;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Observer;
 import java.awt.*;
 
 /**

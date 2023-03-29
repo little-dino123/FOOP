@@ -1,7 +1,6 @@
-package unit8.JavaTurtleDefault;
+package unit8.Classwork.JavaTurtleDefault;
 
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * Class that holds a digital picture and displays it.

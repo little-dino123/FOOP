@@ -1,4 +1,4 @@
-package unit8.FibSeq;
+package unit8.Classwork.FibSeq;
 
 import java.util.Arrays;
 

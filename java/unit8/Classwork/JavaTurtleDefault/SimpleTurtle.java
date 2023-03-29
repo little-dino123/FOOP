@@ -1,11 +1,7 @@
-package unit8.JavaTurtleDefault;
+package unit8.Classwork.JavaTurtleDefault;
 
-import javax.swing.*;
 import java.awt.*;
-import java.awt.font.*;
 import java.awt.geom.*;
-import java.util.Observer;
-import java.util.Random;
 
 /**
  * Class that represents a Logo-style turtle.  The turtle

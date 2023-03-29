@@ -1,7 +1,4 @@
-package unit8.JavaTurtleDefault;
-
-import java.util.*;
-import java.awt.*;
+package unit8.Classwork.JavaTurtleDefault;
 
 /**
  * Class that represents a turtle which is similar to a Logo turtle.

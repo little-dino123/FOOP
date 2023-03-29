@@ -1,8 +1,7 @@
-package unit8.JavaTurtleDefault;
+package unit8.Classwork.JavaTurtleDefault;
 
 import java.awt.*;
 import java.awt.geom.*;
-import javax.swing.*;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
