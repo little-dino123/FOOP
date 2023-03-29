@@ -4,8 +4,6 @@ import java.util.*;
 
 class Main {
     public static void main(String[] args) {
-        //take the following functional programming code and translate it into a class (named Converter.java)
-
         Scanner scan = new Scanner(System.in);
         System.out.println("Do you want to convert to C or F");
         String r = scan.next();
@@ -17,7 +15,7 @@ class Main {
             System.out.println("Enter a temp in C and I will convert it to F");
             double c = scan.nextDouble();
             System.out.println(c + " degrees fahrenheit is the following in celsius: " + Convertor.cToF(c));
-        }   
+        }
         scan.close();
     }
 }
