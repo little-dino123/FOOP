@@ -12,7 +12,8 @@ public class Magic8Ball {
         System.out.println(returnRandom());
 
     }
-    public static String returnRandom(){
-        return l[(int)(Math.random()*l.length)];
+
+    public static String returnRandom() {
+        return l[(int) (Math.random() * l.length)];
     }
 }
