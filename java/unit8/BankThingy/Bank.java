@@ -13,8 +13,8 @@ public class Bank {
         balance = initialDeposit;
     }
 
-    public Bank(String accountNumber, String accountName) {
-        this(0, accountNumber, accountName, 1.0015);
+    public Bank(float initialDeposit, String accountNumber, String accountName) {
+        this(initialDeposit, accountNumber, accountName, 1.0015);
     }
 
     public void deposit(float deposit) {
