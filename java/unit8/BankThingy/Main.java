@@ -17,7 +17,9 @@ public class Main {
             System.out.println("what action would you like to do (balance, deposit, witdraw, changeAPR)");
             String response = scanner.next();
             switch (response) {
-                case "balance" -> System.out.println("Your current balance is " + myBank.currentBalance() + "$.");
+                case "balance" -> {
+                    System.out.println("Your current balance is " + myBank.currentBalance() + "$.");
+                }
                 case "deposit" -> {
                     System.out.println("how much would you like to deposit");
                     float deposit = scanner.nextFloat();
