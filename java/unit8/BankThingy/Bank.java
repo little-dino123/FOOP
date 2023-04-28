@@ -6,6 +6,14 @@ public class Bank {
     double APR;
     float balance;
 
+    /**
+     * Full contructor
+     *
+     * @param initialDeposit
+     * @param accountNumber
+     * @param accountName
+     * @param initAPR
+     */
     public Bank(float initialDeposit, String accountNumber, String accountName, double initAPR) {
         kAccountNumber = accountNumber;
         kAccountName = accountName;
@@ -13,6 +21,19 @@ public class Bank {
         balance = initialDeposit;
     }
 
+    /**
+     * Constructor wihout initAPR because i need a second contructor go brrrrrrrrr
+     * <b><i>heheheha</i></b>
+     * <br></br>
+     * <img src="https://media.tenor.com/MOZ0kG5WZ2wAAAAC/heheheha-clash-royale.gif" width = "200"></img>
+     *
+     * @param initialDeposit
+     * @param accountNumber
+     * @param accountName
+     * @return void
+     * @author goofy ahh
+     * @version -1
+     */
     public Bank(float initialDeposit, String accountNumber, String accountName) {
         this(initialDeposit, accountNumber, accountName, 1.0015);
     }
