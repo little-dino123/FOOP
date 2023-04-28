@@ -3,10 +3,11 @@ package unit8.Classwork.ConditionalPrac;
 import java.util.Scanner;
 
 public class CompareToZero {
+    private static double x;
+    private static Scanner s = new Scanner(System.in);
+    private double y = 0;
 
     public static void main(String[] args) {
-        double x;
-        Scanner s = new Scanner(System.in);
         System.out.println("enter a numbr idot");
         try {
             x = s.nextDouble();

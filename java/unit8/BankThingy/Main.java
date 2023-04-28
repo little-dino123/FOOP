@@ -13,7 +13,7 @@ public class Main {
         System.out.println("How much do you want in your account");
         float money = scanner.nextFloat();
         Bank myBank = new Bank(money, id, name);
-        while (true){
+        while (true) {
             System.out.println("what action would you like to do (balance, deposit, witdraw, changeAPR)");
             String response = scanner.next();
             switch (response) {
