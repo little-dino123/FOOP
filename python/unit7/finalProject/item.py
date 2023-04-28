@@ -1,5 +1,3 @@
-from inventory import Inventory
-
 
 class Item:
     def __init__(self, name, brand, price, store, tax=1.095):
@@ -7,7 +5,6 @@ class Item:
         self.brand = brand
         self.price = price
         self.store = store
-        store.addItemToObject(self)
         self.tax = tax
 
     def changePrice(self, new):

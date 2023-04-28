@@ -1,6 +1,5 @@
 class Cart:
-    def __init__(self, name, quantityOfItems={}, itemNamesToObjects={}):
-        self.name = name
+    def __init__(self, quantityOfItems={}, itemNamesToObjects={}):
         self.quantityOfItems = quantityOfItems
         self.itemNamesToObjects = itemNamesToObjects
 
@@ -18,8 +17,3 @@ class Cart:
 
     def addItemQuantity(self, item, quantity):
         self.quantityOfItems[item] = quantity if item not in self.items else self.items[item] + quantity
-        return True
-
-    def addItemToObject(self, object):
-        self.itemNamesToObjects[object.getName()] = object
-        return True
