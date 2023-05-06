@@ -18,5 +18,4 @@ class Inventory:
         return self.itemNamesToObjects[item]
 
     def addItemQuantity(self, item, quantity):
-        self.quantityOfItems[item] = quantity if item not in self.items else self.items[item] + quantity
-        self.itemNamesToObjects = main.productNames
+        self.quantityOfItems[item] = quantity if item not in self.quantityOfItems else self.items[item] + quantity

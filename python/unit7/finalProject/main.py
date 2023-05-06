@@ -15,7 +15,7 @@ for i in listOfProduct:
     dictOfProduct[i.getName()] = i
 
 def mainLoop():
-    input0 = int(input("What feature would you like to use?\n1. Shopping\n2. Bank\n3. Inventory management"))
+    input0 = int(input("What feature would you like to use?\n1. Shopping\n2. Bank\n3. Inventory management\n"))
     match input0:
         case 1:
             shopperLoop(myCart, myAccount, david, CVSReg1)
@@ -27,22 +27,22 @@ def mainLoop():
 
 
 def shopperLoop(cart, bank, person, register):
-    input0 = input("What action would you like to do " + person.getName() + "?\n1. Add item to cart\n2. Remove item from cart\n3. View Cart\n4. Check out")
+    input0 = input("What action would you like to do " + person.getName() + "?\n1. Add item to cart\n2. Remove item from cart\n3. View Cart\n4. Check out\n")
     match int(input0):
         case 1:
-            print("What Item would you like to add to your cart?")
-            print("Options:\n")
+            print("What Item would you like to add to your cart?\n")
+            print("Options:")
             for j in dictOfProduct:
-                print(j + "\n")
+                print(j)
             input1 = input()
-            input2 = int(input("How amny would you like to add?"))
+            input2 = int(input("How many would you like to add?"))
             cart.addItemQuantity(dictOfProduct[input1], input2)
             print("Done! " + input2 + " " + input1 + "(s) has been added to your cart.")
         case 2:
-            print("What item would you like to remove?")
+            print("What item would you like to remove?\nOptions:")
             dict = cart.getItemQuantityDict()
             for j in dict:
-                print(j + "(s):" + dict[j] + "/n")
+                print(j + "(s):" + dict[j])
             input1 = input()
             input2 = int(input("How many would you like to remove?"))
             cart.addItemQuantity(dict[input1], -input2)
@@ -51,7 +51,7 @@ def shopperLoop(cart, bank, person, register):
         case 3:
             print(cart.getItemQuantityDict)
         case 4:
-            input1 = input("Would you like to check out using cash or card?")
+            input1 = input("Would you like to check out using cash or card?\n")
             if input1 == "cash":
                 currentCash = person.getCash()
                 subtotal = register.getSubtotal(cart.getItemQuantityDict(), dictOfProduct)
@@ -69,7 +69,7 @@ def shopperLoop(cart, bank, person, register):
                 else:
                     print("You dont have enough money")
         case _:
-            print("Invalid, please enter a number between 1-4")
+            print("Invalid, please enter a number between 1-4\n")
 
 
 def storeLoop(inv, reg):
