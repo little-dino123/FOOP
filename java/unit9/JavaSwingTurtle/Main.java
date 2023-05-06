@@ -1,41 +1,76 @@
 package unit9.JavaSwingTurtle;
 
-import unit9.JavaSwingTurtle.Shapes.Asterick;
-import unit9.JavaSwingTurtle.Shapes.Pinwheel;
-import unit9.JavaSwingTurtle.Shapes.Polygon;
 import unit9.JavaSwingTurtle.Turtle.Turtle;
 import unit9.JavaSwingTurtle.Turtle.World;
 
 import java.awt.*;
+import java.util.ArrayList;
+
+import static unit9.JavaSwingTurtle.TypeOfShape.*;
 
 public class Main {
-    public static final int worldWidth = 1000;
-    public static final int worldHeight = 1000;
+    public static final int worldWidth = Config.canvasSize;
+    public static final int worldHeight = Config.canvasSize;
+    private static final int radius = Config.radius;
+    private static final int numberOfSides = Config.numberOfSides;
+    private static final Color shapeColor = Config.shapeColor;
+    private static final World world = new World(worldWidth, worldHeight);
+    private static final Turtle t = new Turtle(world);
+    private static final ArrayList<Shapes> shapeList = new ArrayList<>();
+    private static final ArrayList<Shapes> rainbowCircleList = new ArrayList<>();
+    private static final ArrayList<Shapes> colorWheel = new ArrayList<>();
 
-    private static World world = new World(worldWidth, worldHeight);
-    private static Turtle t = new Turtle(world);
-    private static Asterick ast1 = new Asterick(t, 5, 100, Color.BLACK, worldWidth/2, worldHeight/2);
-    private static Polygon pol1 = new Polygon(t, 5, 100, Color.BLACK, worldWidth/2, worldHeight/2);
-    private static Pinwheel pin1 = new Pinwheel(t, 5, 100, Color.BLACK, worldWidth/2, worldHeight/2);
+
     public static void main(String[] args) {
         t.setVisible(false);
-        Turtle t = new Turtle(world);
-        t.setVisible(false);
-        drawAllTest();
         world.setVisible(true);
-    }
-    public static void drawAllTest(){
-        ast1.draw();
-        pol1.draw();
-        pin1.draw();
-        Polygon pol2 = new Polygon(t, 36, 100, Color.BLACK, worldWidth/2, worldHeight/2);
-        pol2.draw();
-    }
-    public static void drawShapes(int sides, int size, boolean drawAll){
-
-    }
-    public static void drawShapes(int sides, int size, boolean drawAll, boolean drawAst, boolean drawPol, boolean drawPin, boolean drawSno){
-
+        makeShapes();
+        // Choose what you want to draw, rainbowCircleList is a gradient circle, colorWheel is a color wheel, and shapeList is just showcasing the 4 shapes
+        drawAll(shapeList);
     }
 
+    public static void drawAll(ArrayList<Shapes> array) {
+        for (Shapes shape : array) {
+            shape.draw();
+        }
+    }
+    public static void makeShapes(){
+        makeRainbowCircle();
+        makeColorWheel();
+        shapeList.add(new Shapes(t, Config.numberOfSides, Config.radius, 0, POLYGON, Config.shapeColor, Config.rainbowYN, Config.canvasSize /4, Config.canvasSize /4));
+        shapeList.add(new Shapes(t, Config.numberOfSides, Config.radius, 0, ASTERICK, Config.shapeColor, Config.rainbowYN, 3*Config.canvasSize /4, Config.canvasSize /4));
+        shapeList.add(new Shapes(t, Config.numberOfSides, Config.radius, 0, PINWHEEL, Config.shapeColor, Config.rainbowYN, Config.canvasSize /4, 3*Config.canvasSize /4));
+        shapeList.add(new Shapes(t, Config.numberOfSides, Config.radius, 0, SNOWFLAKE, Config.shapeColor, Config.rainbowYN, 3*Config.canvasSize /4, 3*Config.canvasSize /4));
+    }
+    public static void makeRainbowCircle(){
+        double rad = Config.canvasSize /2d-1;
+        for (int i = 0; i < 50; i++) {
+            for (int j = 0; j < rad; j+=2) {
+                rainbowCircleList.add(new Shapes(t, i, j, 0,POLYGON, hsvToColor(j/rad*360, 100,100), false));
+            }
+        }
+    }
+    public static void makeColorWheel(){
+        int rad = Config.canvasSize /2-1;
+        for (double i = 0; i < 1; i+=0.005) {
+            colorWheel.add(new Shapes(t, 360, rad,i, ASTERICK, Color.BLACK, true));
+        }
+    }
+    public static Color hsvToColor(double h, double s, double v){
+        s = s/100;
+        v = v/100;
+        double c = v*s;
+        double x = c*(1-Math.abs((h/60)%2-1));
+        double m = v-c;
+        double r,g,b;
+        if (h<0||h>=360){return new Color(255,0,0);}
+        else if  (  0<=h&&h<60 ){r=c;g=x;b=0;}
+        else if ( 60<=h&&h<120){r=x;g=c;b=0;}
+        else if (120<=h&&h<180){r=0;g=c;b=x;}
+        else if (180<=h&&h<240){r=0;g=x;b=c;}
+        else if (240<=h&&h<300){r=x;g=0;b=c;}
+        else if (300<=h&&h<360){r=c;g=0;b=x;}
+        else return Color.BLACK;
+        return new Color((int)((r+m)*255),(int)((g+m)*255),(int)((b+m)*255));
+    }
 }
