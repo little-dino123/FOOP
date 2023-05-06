@@ -1,4 +1,4 @@
-package unit9.BouncingBallsUnfinished;
+package unit9.BouncingBallsProject;
 /*
  * You will need to alter code in this class!
  * This contains control logic and main display panel for the objects.
@@ -10,7 +10,6 @@ package unit9.BouncingBallsUnfinished;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import javax.swing.*;
 

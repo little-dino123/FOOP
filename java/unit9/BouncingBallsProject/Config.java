@@ -1,4 +1,4 @@
-package unit9.BouncingBallsUnfinished;
+package unit9.BouncingBallsProject;
 
 import java.awt.*;
 

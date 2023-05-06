@@ -1,4 +1,4 @@
-package unit9.BouncingBallsUnfinished;
+package unit9.BouncingBallsProject;
 /*
  * You will need to alter code in this class!
  * First, make sure a single ball bounces
@@ -7,8 +7,6 @@ package unit9.BouncingBallsUnfinished;
  */
 
 import java.awt.*;
-import java.awt.geom.Rectangle2D;
-import java.util.Formatter;
 
 import static java.lang.Math.*;
 

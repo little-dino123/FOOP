@@ -1,4 +1,4 @@
-package unit9.JavaSwingTurtle;
+package unit9.TurtleDrawing;
 
 public enum TypeOfShape {
     ASTERICK,
