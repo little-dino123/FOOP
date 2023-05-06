@@ -18,8 +18,6 @@ public class Ball {
     public double radius;
     private Color color;
 
-    private double x1,y1,x2,y2,r1,r2,dist;
-
 
     /**
      * Constructor to create the ball and it's attributes.
@@ -32,8 +30,6 @@ public class Ball {
      * @param color         : color of the ball
      */
     public Ball(double x, double y, double radius, double speed, double angleInDegree, Color color) {
-        //Notice the 'global' variables have the same name as the parameters.
-        //Use the .this keyword to signify the 'global' variable
         this.x = x;
         this.y = y;
         // Convert (speed, angle) to (x, y)
@@ -61,57 +57,94 @@ public class Ball {
     // Used to determine how to reflect off the walls of the screen
     public void moveOneStepWithCollisionDetection(ContainerBox box) {
         // Use the variable box to get the max/min x/y values of the screen
-        double minX = box.minX;
-        double minY = box.minY;
-        double maxX = box.maxX;
-        double maxY = box.maxY;
         // Next step
         this.x += speedX;
         this.y += speedY;
         bounceOffSide(box);
     }
-    public void bounceOffSide(ContainerBox box){
+
+    public void bounceOffSide(ContainerBox box) {
         this.x += speedX;
         this.y += speedY;
         if (x <= box.minX || x + 2 * radius >= box.maxX) {
+            x -= speedX;
             speedX *= -1;
         }
         if (y <= box.minY || y + 2 * radius >= box.maxY) {
+            y -= speedY;
             speedY *= -1;
         }
     }
 
     public void collides(Ball b2) {
-        // Use this classes x, y, and radius
-        // Compare versus the b2.x, b2.y, and b2.radius
-        // Determine if they collide and have them bounce off each other
-        x1 = x + radius;
-        y1 = y + radius;
-        x2 = b2.x + b2.radius;
-        y2 = b2.y + b2.radius;
-        r1 = radius;
-        r2 = b2.radius;
         if (checkColliding(b2)) {
-
+            collideActual(b2);
+            //complexCollide(b2);
         }
     }
 
     public boolean checkColliding(Ball b2) {
-        dist = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
-        return dist < r1 + r2;
+        double x1 = x + radius;
+        double y1 = y + radius;
+        double x2 = b2.x + b2.radius;
+        double y2 = b2.y + b2.radius;
+        double r1 = radius;
+        double r2 = b2.radius;
+        double dist = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+        return dist <= r1 + r2;
     }
 
-    public double returnCollisionAngle(Ball b2) {
+    public void collideActual(Ball b2) {
+        double b1vx = speedX;
+        double b1vy = speedY;
+        speedX = b2.speedX;
+        speedY = b2.speedY;
+        b2.speedX = b1vx;
+        b2.speedY = b1vy;
+        x += speedX;
+        y += speedY;
+        b2.x += b2.speedX;
+        b2.y += b2.speedY;
 
-        double angleR = atan((y2 - y1) / (x2 - x1));
-        double angleD = toDegrees(angleR);
-        double b1AngleR = atan(speedY / speedX);
-        double b1AngleD = toDegrees(b1AngleR);
-        double b2AngleR = atan(b2.speedY / b2.speedX);
-        double b2AngleD = toDegrees(b2AngleR);
-        // TODO: try to calculate the angle each ball will be after the collision by finding the angle of the collision on the circle, finding the difference to the oppposite of the current direction, then doubleling it and adding it on to the opposite of the original direction to net the final angle
-        return 1d;
     }
+
+    public void complexCollide(Ball b2) {
+        double x1, y1, x2, y2;
+        x1 = x + radius;
+        y1 = y + radius;
+        x2 = b2.x + b2.radius;
+        y2 = b2.y + b2.radius;
+        double x1s, y1s, v1, x2s, y2s, v2;
+        x1s = speedX;
+        y1s = speedY;
+        v1 = getSpeed();
+        x2s = b2.speedX;
+        y2s = b2.speedY;
+        v2 = b2.getSpeed();
+        double d1, d2, normalDir;
+        d1 = toDegrees(atan(x1s / y1s));
+        d2 = toDegrees(atan(x2s / y2s));
+        normalDir = toDegrees(atan((x2 - x1) / (y2 - y1)));
+        double newd1, newd2;
+        newd1 = normalDir + (d1 - normalDir);
+        newd2 = -normalDir + (d2 + normalDir);
+        double newx1s, newy1s, newx2s, newy2s;
+        newx1s = sin(toRadians(newd1)) * v1;
+        newy1s = cos(toRadians(newd1)) * v1;
+        newx2s = sin(toRadians(newd2)) * v2;
+        newy2s = cos(toRadians(newd2)) * v2;
+//        System.out.println("x1 "+x1+" y1 "+y1+" x2 "+x2+" y2 "+y2);
+//        System.out.println("d1 "+d1+" d2 "+d2);
+//        System.out.println("normal "+normalDir);
+//        System.out.println("newd1 "+newd1+" newd2 "+newd2);
+//        System.out.println("x1s "+x1s+" y1s "+y1s+" x2s "+x2s+" y2s "+y2s);
+//        System.out.println("newx1s "+newx1s+" newy1s "+newy1s+" newx2s "+newx2s+" newy2s "+newy2s);
+        speedX = newx1s;
+        speedY = newy1s;
+        b2.speedX = newx2s;
+        b2.speedY = newy2s;
+    }
+
 
     /**
      * Return the magnitude of speed.

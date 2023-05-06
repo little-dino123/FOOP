@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Bouncing Ball");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        BallWorld size = new BallWorld(500, 500);
+        BallWorld size = new BallWorld();
         frame.setContentPane(size);
         frame.pack();
         frame.setVisible(true);
