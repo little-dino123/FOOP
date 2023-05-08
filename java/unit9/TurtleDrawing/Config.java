@@ -15,7 +15,7 @@ import java.awt.*;
  * rainbowYN: defines whether the shapes will be rainbow. NOTE: Overrides shapeColor
  */
 public class Config {
-    public static final int canvasSize = 1300;
+    public static final int canvasSize = 800;
     public static final int numberOfSides = 5;
     public static final int radius = canvasSize / 5;
     public static final Color shapeColor = Color.BLACK;

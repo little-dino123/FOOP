@@ -66,7 +66,7 @@ public class Shapes {
         t.setHeading(heading);
         t.penDown();
         for (double i = 0; i < sides; i++) {
-            if (rainbow) t.setPenColor(hsvToColor(i * 360 / sides, 100, 100));
+            if (rainbow) t.setPenColor(hsvToColor(t.getHeading(), 100, 100));
             t.turn(360d / sides);
             t.forward(size);
             t.moveTo(centerX, centerY);

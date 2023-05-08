@@ -26,13 +26,14 @@ public class Main {
         world.setVisible(true);
         makeShapes();
         // Choose what you want to draw, rainbowCircleList is a gradient circle, colorWheel is a color wheel, and shapeList is just showcasing the 4 shapes
-        drawAll(shapeList);
+        drawAll(colorWheel);
     }
 
     public static void drawAll(ArrayList<Shapes> array) {
         for (Shapes shape : array) {
             shape.draw();
         }
+        System.out.println("done");
     }
 
     public static void makeShapes() {
@@ -54,9 +55,13 @@ public class Main {
     }
 
     public static void makeColorWheel() {
-        int rad = Config.canvasSize / 2 - 1;
-        for (double i = 0; i < 1; i += 0.005) {
-            colorWheel.add(new Shapes(t, 360, rad, i, ASTERICK, Color.BLACK, true));
+        double rad = Config.canvasSize / 2d - 1;
+//        for (int i = 0; i <= rad; i += 1) {
+//            colorWheel.add(new Shapes(t, 360, i, 0, POLYGON, hsvToColor(i / rad * 360, 100, 100), true));
+//        }
+        int sides = 4;
+        for (double i = 0; i < 360d/sides; i += 0.001) {
+            colorWheel.add(new Shapes(t, sides, (int)rad, i, ASTERICK, Color.BLACK, true));
         }
     }
 
