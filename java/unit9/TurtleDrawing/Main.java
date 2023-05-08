@@ -11,9 +11,6 @@ import static unit9.TurtleDrawing.TypeOfShape.*;
 public class Main {
     public static final int worldWidth = Config.canvasSize;
     public static final int worldHeight = Config.canvasSize;
-    private static final int radius = Config.radius;
-    private static final int numberOfSides = Config.numberOfSides;
-    private static final Color shapeColor = Config.shapeColor;
     private static final World world = new World(worldWidth, worldHeight);
     private static final Turtle t = new Turtle(world);
     private static final ArrayList<Shapes> shapeList = new ArrayList<>();
@@ -56,10 +53,7 @@ public class Main {
 
     public static void makeColorWheel() {
         double rad = Config.canvasSize / 2d - 1;
-//        for (int i = 0; i <= rad; i += 1) {
-//            colorWheel.add(new Shapes(t, 360, i, 0, POLYGON, hsvToColor(i / rad * 360, 100, 100), true));
-//        }
-        int sides = 4;
+        int sides = 1;
         for (double i = 0; i < 360d/sides; i += 0.001) {
             colorWheel.add(new Shapes(t, sides, (int)rad, i, ASTERICK, Color.BLACK, true));
         }
