@@ -6,7 +6,7 @@ public class Config {
     /**
      * set the number of balls simulated
      */
-    public static final int numberOfBalls = 50;
+    public static final int numberOfBalls = 20;
     /**
      * set the radius of the balls
      */
