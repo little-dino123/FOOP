@@ -51,8 +51,8 @@ public class Shapes {
         t.penDown();
         t.turn(90 + 180d / sides);
         int sidelength = (int) ((size * size * Math.sin(Math.toRadians(360d / sides))) / (size * Math.cos(Math.toRadians(180d / sides))));
-        for (double i = 0; i < sides; i++) {
-            if (rainbow) t.setPenColor(hsvToColor(i * 360 / sides, 100, 100));
+        for (int i = 0; i < sides; i++) {
+            if (rainbow) t.setPenColor(hsvToColor(i * 360d / sides, 100, 100));
             t.forward(sidelength);
             t.turn(360d / sides);
         }
@@ -85,8 +85,8 @@ public class Shapes {
         int sidelength = (int) ((size * size * Math.sin(Math.toRadians(360d / sides))) / (size * Math.cos(Math.toRadians(180d / sides))));
         System.out.println(sidelength);
         System.out.println(2 * size * size * (1 - Math.cos(Math.toRadians(360d / sides))));
-        for (double i = 0; i < sides; i++) {
-            if (rainbow) t.setPenColor(hsvToColor(i * 360 / sides, 100, 100));
+        for (int i = 0; i < sides; i++) {
+            if (rainbow) t.setPenColor(hsvToColor(i * 360d / sides, 100, 100));
             t.forward(sidelength);
             t.backward(sidelength / 2);
             t.turn(360d / sides);
@@ -100,8 +100,8 @@ public class Shapes {
         t.moveTo(centerX, centerY);
         t.setHeading(heading);
         t.penDown();
-        for (double i = 0; i < sides; i++) {
-            if (rainbow) t.setPenColor(hsvToColor(i * 360 / sides, 100, 100));
+        for (int i = 0; i < sides; i++) {
+            if (rainbow) t.setPenColor(hsvToColor(i * 360d / sides, 100, 100));
             drawTriange(180d / sides, size);
             t.moveTo(centerX, centerY);
             t.turn(360d / sides);

@@ -53,8 +53,8 @@ public class Main {
 
     public static void makeColorWheel() {
         double rad = Config.canvasSize / 2d - 1;
-        int sides = 1;
-        for (double i = 0; i < 360d/sides; i += 0.001) {
+        int sides = 4;
+        for (double i = 0; i < 360d/sides; i += 0.005) {
             colorWheel.add(new Shapes(t, sides, (int)rad, i, ASTERICK, Color.BLACK, true));
         }
     }
@@ -67,7 +67,7 @@ public class Main {
         double m = v - c;
         double r, g, b;
         if (h < 0 || h >= 360) {
-            return new Color(255, 0, 0);
+            return new Color(255, 255, 255);
         } else if (0 <= h && h < 60) {
             r = c;
             g = x;
