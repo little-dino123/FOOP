@@ -10,10 +10,7 @@ dictOfProduct = {}
 for i in listOfProduct:
     dictOfProduct[i.getName()] = i
 
-def mainLoop():
-    storeLoop(CVS)
-
-def storeLoop(inv):
+def mainloop(inv):
     input0 = input("What action would you like to do ?\n1. Add item\n2. Remove item\n3. View Inventory\n")
     match input0:
         case "1":
@@ -38,4 +35,4 @@ def storeLoop(inv):
                 print(name +":" + str(itemdict[itemObj]))
 
 while True:
-    mainLoop()
+    mainloop(CVS)
