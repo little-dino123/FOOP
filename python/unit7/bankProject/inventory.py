@@ -14,8 +14,8 @@ class Inventory:
     def getItemObjectDict(self):
         return self.itemNamesToObjects
 
-    def getItemObjectDict(self, item):
+    def getItemObject(self, item):
         return self.itemNamesToObjects[item]
 
     def addItemQuantity(self, item, quantity):
-        self.quantityOfItems[item] = quantity if item not in self.quantityOfItems else self.items[item] + quantity
+        self.quantityOfItems[item] = quantity if item not in self.quantityOfItems else self.quantityOfItems[item] + quantity

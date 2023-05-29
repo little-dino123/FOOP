@@ -1,4 +1,3 @@
-
 class Item:
     def __init__(self, name, brand, price, store, tax=1.095):
         self.name = name
@@ -7,10 +6,10 @@ class Item:
         self.store = store
         self.tax = tax
 
+    def changeName(self,new):
+        self.name = new
     def changePrice(self, new):
         self.price = new
-        return True
-
     def getPrice(self):
         return self.price
 
