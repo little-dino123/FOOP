@@ -1,2 +1,4 @@
-package GameOfLife;public class Util {
+package GameOfLife;
+
+public class Util {
 }

@@ -1,2 +1,4 @@
-package GameOfLife;public class Cell {
+package GameOfLife;
+
+public class Cell {
 }

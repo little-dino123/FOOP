@@ -1,2 +1,6 @@
-package GameOfLife;public enum CellState {
+package GameOfLife;
+
+public enum CellState {
+    ALIVE,
+    DEAD
 }

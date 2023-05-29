@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public class GameOfLife {
+package GameOfLife;
+
+public class Main {
 }
