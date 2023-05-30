@@ -40,7 +40,7 @@ public class Board {
     public void updateDisplayBoard(){
         for (int i = 0; i < width; i++) {
             for (int j = 0; j < height; j++) {
-                displayBoard[i][j] = (stateBoard[i][j]==CellState.A)?"*":" ";
+                displayBoard[i][j] = (stateBoard[i][j]==CellState.A)?"⬜":"  ";
             }
         }
     }
