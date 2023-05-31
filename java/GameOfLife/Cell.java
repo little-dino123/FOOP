@@ -1,7 +1,6 @@
 package GameOfLife;
 
 public class Cell {
-    private Cell[] adjacentCells;
     private CellState cellState;
     private final Board board;
     public final int cellX;
