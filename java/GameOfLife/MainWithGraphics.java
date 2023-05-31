@@ -10,7 +10,7 @@ public class MainWithGraphics {
 
     public static void main(String[] args) throws InterruptedException {
         while (true) {
-            if (board.updateAllBoards()) break;
+            board.updateAllBoards();
             printNewBoard();
             Thread.sleep(1000 / Config.refreshRate);
         }
